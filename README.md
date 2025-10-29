@@ -36,64 +36,62 @@ Flutter製のシンプルな在庫・賞味期限管理アプリです。
 ---
 
 ## 🧱 プロジェクト構成
-
-text
+```
 lib/
- ├─ main.dart                     # アプリエントリーポイント
- ├─ models/
- │   └─ snack_item.dart           # 駄菓子データモデル
- ├─ data/
- │   └─ dummy_data.dart           # ダミーデータ（開発用）
- ├─ screens/
- │   └─ settings_screen.dart      # 設定画面
- └─ core/
-     └─ settings/
-         └─ app_settings.dart     # アプリ全体設定（ValueNotifier共有）
-🚀 今後の開発予定
+├─ main.dart # アプリエントリーポイント
+├─ models/
+│ └─ snack_item.dart # 駄菓子データモデル
+├─ data/
+│ └─ dummy_data.dart # ダミーデータ（開発用）
+├─ screens/
+│ └─ settings_screen.dart # 設定画面
+└─ core/
+└─ settings/
+└─ app_settings.dart # アプリ全体設定（ValueNotifier共有）
+```
 
-Firebase Firestore との連携（データ永続化・マルチユーザー共有）
+---
 
-画像登録（カメラ撮影＋保存）
+## 🚀 今後の開発予定
 
-バーコードスキャンによる商品情報取得
+- [ ] Firebase Firestore との連携（データ永続化・マルチユーザー共有）
+- [ ] 画像登録（カメラ撮影＋保存）
+- [ ] バーコードスキャンによる商品情報取得
+- [ ] OCRによる賞味期限自動入力
+- [ ] テーマカラー切り替え（ライト / ダーク）
+- [ ] データエクスポート・バックアップ機能
 
-OCRによる賞味期限自動入力
+---
 
-テーマカラー切り替え（ライト / ダーク）
+## 💻 開発環境
 
-データエクスポート・バックアップ機能
+| 項目 | バージョン |
+|------|-------------|
+| Flutter | 3.x（Stable Channel） |
+| Dart | 最新安定版 |
+| IDE | Android Studio / VSCode |
+| 対応OS | Android / iOS |
 
-💻 開発環境
-項目	バージョン
-Flutter	3.x（Stable Channel）
-Dart	最新安定版
-IDE	Android Studio / VSCode
-対応OS	Android / iOS
-📸 スクリーンショット（予定）
+---
 
-※ 今後アプリUIの画像をここに追加予定です。
+## 📸 スクリーンショット（予定）
 
-🧑‍💻 作者 / 開発方針
+> ※ 今後アプリUIの画像をここに追加予定です。
 
-このプロジェクトは、
-駄菓子屋での賞味期限管理業務を効率化することと、
+---
+
+## 🧑‍💻 作者 / 開発方針
+
+このプロジェクトは、  
+駄菓子屋での賞味期限管理業務を効率化することと、  
 Flutterを用いた実践的なアプリ開発学習の両立を目的としています。
 
-ChatGPTをアシスタントとして、
+ChatGPTをアシスタントとして、  
 コード品質・構成の正確性を重視しながら開発を進めています。
 
-📄 ライセンス
+---
 
-MIT License
+## 📄 ライセンス
+
+MIT License  
 Copyright (c) 2025 [Your Name]
-
-
----
-
-✅ ポイント
-- `プロジェクト構成` セクションを ```text ブロックで囲んで閉じています。
-- これでGitHub上で綺麗に整列し、後続の見出し（🚀 今後の開発予定など）も崩れません。
-
----
-
-この修正版をそのまま貼れば、スクリーンショットのような切れ方は完全に解消されます。
