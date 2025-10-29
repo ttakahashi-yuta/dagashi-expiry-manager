@@ -1,16 +1,99 @@
-# expiry_date
+# 🍬 駄菓子賞味期限管理アプリ（Dagashi Expiry Manager）
 
-A new Flutter project.
+Flutter製のシンプルな在庫・賞味期限管理アプリです。  
+駄菓子屋などでの在庫管理を目的とし、**スマホだけで完結**するよう設計しています。  
+複数端末での共有やバーコード/OCRによる自動登録機能も将来的に実装予定です。
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🎯 目的
 
-A few resources to get you started if this is your first Flutter project:
+- Flutterを使った **iOS / Android 両対応アプリ開発の学習**
+- 実際の業務（駄菓子屋の在庫・賞味期限管理）に役立つ実用アプリの作成
+- 将来的には **Firebase連携・OCR認識・マルチユーザー同期** を実装予定
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧩 現在の機能
+
+### ✅ 在庫管理UI
+- 駄菓子一覧を **賞味期限順に自動ソート**
+- 期限ステータスを3種類で表示  
+  （🔴期限切れ / 🟡もうすぐ / 🟢余裕あり）
+- 各商品の「名前」「賞味期限」「数量」を管理
+- 商品画像（仮の画像枠付き）
+
+### ✅ 削除機能
+- 右スワイプで削除可能（`Dismissible`ウィジェット）
+- 削除後は **SnackBarで「元に戻す」Undo対応**
+- 設定により「削除確認ダイアログ」をON/OFF可能
+
+### ✅ 設定画面
+- 削除確認ダイアログのON/OFFトグルを実装
+- 設定変更はアプリ全体に即時反映（`ValueNotifier`によるリアルタイム共有）
+- 今後の機能追加に対応できる拡張性の高いUI構成
+
+---
+
+## 🧱 プロジェクト構成
+
+text
+lib/
+ ├─ main.dart                     # アプリエントリーポイント
+ ├─ models/
+ │   └─ snack_item.dart           # 駄菓子データモデル
+ ├─ data/
+ │   └─ dummy_data.dart           # ダミーデータ（開発用）
+ ├─ screens/
+ │   └─ settings_screen.dart      # 設定画面
+ └─ core/
+     └─ settings/
+         └─ app_settings.dart     # アプリ全体設定（ValueNotifier共有）
+🚀 今後の開発予定
+
+Firebase Firestore との連携（データ永続化・マルチユーザー共有）
+
+画像登録（カメラ撮影＋保存）
+
+バーコードスキャンによる商品情報取得
+
+OCRによる賞味期限自動入力
+
+テーマカラー切り替え（ライト / ダーク）
+
+データエクスポート・バックアップ機能
+
+💻 開発環境
+項目	バージョン
+Flutter	3.x（Stable Channel）
+Dart	最新安定版
+IDE	Android Studio / VSCode
+対応OS	Android / iOS
+📸 スクリーンショット（予定）
+
+※ 今後アプリUIの画像をここに追加予定です。
+
+🧑‍💻 作者 / 開発方針
+
+このプロジェクトは、
+駄菓子屋での賞味期限管理業務を効率化することと、
+Flutterを用いた実践的なアプリ開発学習の両立を目的としています。
+
+ChatGPTをアシスタントとして、
+コード品質・構成の正確性を重視しながら開発を進めています。
+
+📄 ライセンス
+
+MIT License
+Copyright (c) 2025 [Your Name]
+
+
+---
+
+✅ ポイント
+- `プロジェクト構成` セクションを ```text ブロックで囲んで閉じています。
+- これでGitHub上で綺麗に整列し、後続の見出し（🚀 今後の開発予定など）も崩れません。
+
+---
+
+この修正版をそのまま貼れば、スクリーンショットのような切れ方は完全に解消されます。
