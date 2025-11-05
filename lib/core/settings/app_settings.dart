@@ -1,9 +1,14 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// アプリ全体で共有する設定値を保持するクラス
-/// 現段階では削除確認のON/OFFのみを管理
-class AppSettings {
-  /// 削除時に確認ダイアログを表示する設定
-  /// true = ON（確認する）, false = OFF（即削除）
-  static final ValueNotifier<bool> confirmDelete = ValueNotifier<bool>(true);
+/// 削除確認ON/OFFを管理する（初期値: true）
+class ConfirmDeleteNotifier extends Notifier<bool> {
+  @override
+  bool build() => true;
+
+  void set(bool value) => state = value;
+  void toggle() => state = !state;
 }
+
+/// Riverpod 3.x の NotifierProvider
+final confirmDeleteProvider =
+NotifierProvider<ConfirmDeleteNotifier, bool>(ConfirmDeleteNotifier.new);
