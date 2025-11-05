@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:expiry_date/core/settings/app_settings.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final value = ref.watch(confirmDeleteProvider);
+
     return Scaffold(
       appBar: AppBar(title: const Text('設定')),
       body: ListView(
         children: [
           _buildSectionHeader('一般設定'),
-          ValueListenableBuilder<bool>(
-            valueListenable: AppSettings.confirmDelete,
-            builder: (context, value, _) {
-              return SwitchListTile(
-                title: const Text('削除時に確認ダイアログを表示する'),
-                subtitle: const Text('OFFにするとスワイプですぐ削除されます（Undoは有効）'),
-                value: value,
-                onChanged: (v) => AppSettings.confirmDelete.value = v,
-              );
-            },
+          SwitchListTile(
+            title: const Text('削除時に確認ダイアログを表示する'),
+            subtitle: const Text('OFFにするとスワイプですぐ削除されます（Undoは有効）'),
+            value: value,
+            onChanged: (v) => ref.read(confirmDeleteProvider.notifier).set(v),
           ),
           const Divider(),
           _buildSectionHeader('その他'),
